@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Security Checker</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #f5f5f5;
+        color: #333;
+        padding: 16px;
+        width: 280px;
+      }
+      h2 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+      .status-box {
+        background: white;
+        padding: 12px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      .status {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 6px 0;
+      }
+      .ok {
+        color: green;
+        font-weight: bold;
+      }
+      .fail {
+        color: red;
+        font-weight: bold;
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .green {
+        background-color: #4caf50;
+      }
+      .red {
+        background-color: #f44336;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Статус безпеки</h2>
+    <div class="status-box">
+      <div class="status"><span>🌐 Сайт:</span><span id="host"></span></div>
+      <div class="status">
+        <span class="dot" id="httpsDot"></span> HTTPS:
+        <span id="httpsStatus"></span>
+      </div>
+      <div class="status">
+        <span class="dot" id="dnsDot"></span> DNS: <span id="dnsStatus"></span>
+      </div>
+    </div>
+  </body>
+  <script src="popup.js"></script>
+</html>
